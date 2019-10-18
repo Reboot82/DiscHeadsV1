@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+function usage() {
+  cat<<-HERE
+Usage: ./$(basename $0) [-p PORT] METHOD PATH [ARGS...]
+
+  Tests the web api called at localhost using
+
+  PATH
+    The path that you are attempting to test.
+
+  METHOD
+    the http method to make a request with. The following are the
+    available METHODs:
+
+     new
+       makes get request to PATH and saves the output in ./sample.json
+     get
+       makes GET request to PATH
+     post FILE
+       makes post request to PATH and adds contents of FILE as body of
+       request
+     put FILE
+       makes put request to PATH and adds contest of FILE as body of
+       request
+     delete
+       makes delete request to PATH
+
+  -p PORT
+    sets the port to use when making the request to PORT. This defaults to
+    3000.
+
+  Example:
+
+  Test GET request to 'locallhost:3000/shops':
+
+    ./test get-all /shops
+
+  Test GET request to 'locallhost:3000/shops/new':
+
+    ./test new /shops/new
+
+  Test POST request to 'locallhost:3000/shops':
+
+    ./test post ./sample.json /shops 
+HERE
+  exit 0
+}
+
+port="3000"
+
+while getopts 'hp:' opt; do
+  case $opt in
+    h)
+      usage
+      ;;
+    p)
+      port=$OPTARG
+  esac
+done
+
+method="$1"
+
+function makeRequest() {
+  method="$1"
+  route="http://localhost:${port}${3}"
+  body="$2"
+
+  echo "$method $route $body" >&2
+
+  curl -s -w "\nSTATUS: %{http_code}" -X $method $route --header "Content-Type: application/json" --data "$body"
+}
+
+case "$method" in
+  "new")
+    makeRequest "GET" "" "$2" | grep -v "STATUS" > ./sample.json && cat ./sample.json
+    ;;
+  "post")
+    makeRequest "POST" "$(cat $2)" "$3"
+    ;;
+  "put")
+    makeRequest "PUT" "$(cat $2)" "$3"
+    ;;
+  "get")
+    makeRequest "GET" "" "$2"
+    ;;
+  "delete")
+    makeRequest "DELETE" "" "$2"
+esac

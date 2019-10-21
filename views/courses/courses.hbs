@@ -1,0 +1,16 @@
+<h1>
+    List of Users
+</h1>
+
+<a href="/users/new">
+    <button>
+    Add New User
+    </button>
+</a>
+<ol>
+{{#each users}}
+    <a href="/users/{{_id}}">
+        <li>{{name}}</li>
+    </a>
+{{/each}}
+</ol>

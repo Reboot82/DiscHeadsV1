@@ -5,11 +5,11 @@ const userApi = require('../models/user.js')
 
 const userRouter = express.Router()
 
-userRouter.get('/users/new', (req, res) => {
+userRouter.get('/new', (req, res) => {
   res.render('./users/newUserForm')
 })
 
-userRouter.get('/users/:userId/edit', (req, res) => {
+userRouter.get('/:userId/edit', (req, res) => {
   userApi.getUser(req.params.userId)
     .then((user) => {
       res.render('./users/editUserForm', {user})
@@ -17,7 +17,7 @@ userRouter.get('/users/:userId/edit', (req, res) => {
 })
 
  //getAll
- userRouter.get('/users', (req, res) => {
+ userRouter.get('/', (req, res) => {
   userApi.getAllUsers()
     .then((users) => {
       res.render('./users/users', {users})
@@ -25,7 +25,7 @@ userRouter.get('/users/:userId/edit', (req, res) => {
 })
 
 //getOne
-userRouter.get('/users/:userId', (req, res) => {
+userRouter.get('/:userId', (req, res) => {
   userApi.getUser(req.params.userId)
     .then((user) => {
       res.render('./users/user', {user})
@@ -33,7 +33,7 @@ userRouter.get('/users/:userId', (req, res) => {
 })
 
 //create
-userRouter.post('/users', (req, res) => {
+userRouter.post('/', (req, res) => {
   userApi.addNewUser(req.body)
     .then((newUser) => {
       res.redirect(`/users`)
@@ -41,7 +41,7 @@ userRouter.post('/users', (req, res) => {
 })
 
 //update
-userRouter.put('/users/:userId', (req, res) => {
+userRouter.put('/:userId', (req, res) => {
   userApi.updateUser(req.params.userId, req.body)
     .then((updateduser) => {
       res.redirect(`/users`)
@@ -49,7 +49,7 @@ userRouter.put('/users/:userId', (req, res) => {
 })
 
 //delete
-userRouter.delete('/users/:userId', (req, res) => {
+userRouter.delete('/:userId', (req, res) => {
   userApi.deleteUser(req.params.userId)
     .then((deletedUser) => {
       res.redirect(`/users`)

@@ -9,7 +9,7 @@ const methodOverride = require('method-override')
  *
  */
 const { userRouter } = require('./controllers/user.js')
-// const { templateRouter2 } = require('./controllers/template2.js')
+const { courseRouter } = require('./controllers/course.js')
 
 
 app.use(express.urlencoded({extended: true}))
@@ -28,8 +28,8 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/', userRouter)
-// app.use('/temp2', templateRouter2)
+app.use('/users', userRouter)
+app.use('/courses', courseRouter)
 
 const PORT = process.env.PORT || 3000 
 

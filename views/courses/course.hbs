@@ -1,21 +1,21 @@
-<h3>{{user.name}}</h3>
+<h3>{{course.name}}</h3>
 
-<p>{{user.photo}}</p>
-<p>Ability: {{user.ability}}</p>
-<p>Location: {{user.location}}</p>
+<p>{{course.photo}}</p>
+<p>Difficulty: {{course.difficulty}}</p>
+<p>Location: {{course.location}}</p>
 
-<a href="/users/{{user._id}}/edit">
+<a href="/courses/{{course._id}}/edit">
     <button>
-        Edit User
+        Edit Course
     </button>
 </a>
 
-<form action="/users/{{user._id}}?_method=DELETE" method="POST">
-    <input class="form" type="submit" value="Delete User" />
+<form action="/courses/{{course._id}}?_method=DELETE" method="POST">
+    <input class="form" type="submit" value="Delete Course" />
 </form>
 
 <footer>
-    <a href="/users/">
+    <a href="/courses/">
         <button>Home</button>
     </a>
 </footer>

@@ -1,0 +1,21 @@
+<h3>{{disc.name}}</h3>
+
+<p>{{disc.photo}}</p>
+<p>Flight Numbers: {{disc.flightNumbers}}</p>
+<p>First Played: {{disc.firstPlayed}}</p>
+
+<a href="/discs/{{disc._id}}/edit">
+    <button>
+        Edit Disc
+    </button>
+</a>
+
+<form action="/discs/{{disc._id}}?_method=DELETE" method="POST">
+    <input class="form" type="submit" value="Delete Disc" />
+</form>
+
+<footer>
+    <a href="/discs/">
+        <button>Home</button>
+    </a>
+</footer>

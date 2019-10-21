@@ -10,6 +10,7 @@ const methodOverride = require('method-override')
  */
 const { userRouter } = require('./controllers/user.js')
 const { courseRouter } = require('./controllers/course.js')
+const { discRouter } = require('./controllers/disc.js')
 
 
 app.use(express.urlencoded({extended: true}))
@@ -30,6 +31,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/users', userRouter)
 app.use('/courses', courseRouter)
+app.use('/discs', discRouter)
 
 const PORT = process.env.PORT || 3000 
 

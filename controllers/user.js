@@ -2,6 +2,7 @@
 const express = require('express')
 
 const userApi = require('../models/user.js')
+const courseApi = require('../models/course.js')
 
 const userRouter = express.Router()
 
@@ -9,7 +10,11 @@ const userRouter = express.Router()
 userRouter.get('/:userId/checkIn', (req, res) => {
   userApi.getUser(req.params.userId)
   .then((user) => {
-    res.render('./checkIn.hbs', {user})
+    courseApi.getAllCourses()
+      .then((allCourses) => {
+        res.render('./checkIn.hbs', {user, allCourses})
+
+      })
   })
 })
 

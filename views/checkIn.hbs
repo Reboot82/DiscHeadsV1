@@ -1,13 +1,21 @@
 <h4>{{user.name}} Check-In</h4>
 
 <p>
-    Course Name: <input class="form" type="text" name="name" required="required" placeholder="Name"
-        value="{{course.name}}" />
+    Course Name: 
+    <form><input class="form" name="name" required="required" list="course-options" placeholder="Course" />
+   <datalist id="course-options">
+       {{#each allCourses}}
+       <option value="{{name}}">
+       {{/each}}
+   </datalist>
+   </form>
 </p>
+{{!-- <p>Time Started: </p> --}}
 
 <a href="/users/{{user._id}}/checkOut">
 {{!-- <form action="/course/{{course._id}}/{{course.activePlayers}}" method="POST"> --}}
     <input class="form" type="submit" value="Start" />
+    <input type="hidden" value="{{user._id}}"
 {{!-- </form> --}}
 </a>
 

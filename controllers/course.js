@@ -47,7 +47,7 @@ courseRouter.post('/', (req, res) => {
     })
 })
 
-// courseRouter.put('/activePlayers', (req, res) => {
+// courseRouter.put('/:courseId/activePlayers', (req, res) => {
 //   courseApi.getCourse(req.params.courseId)
 //   .then((course) => {
 //     course.activePlayers.push(userId)

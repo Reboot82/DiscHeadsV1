@@ -6,7 +6,8 @@ const CourseSchema = new mongoose.Schema({
  name: { type: String, required: true },
  photo: { type: String },
  difficulty: { type: String, enum: ['Easy', 'Hard', 'Pro'] },
- location: { type: String }
+ location: { type: String },
+ activePlayers: []
 })
 
 const CourseCollection = mongoose.model('Course', CourseSchema)

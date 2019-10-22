@@ -47,6 +47,15 @@ courseRouter.post('/', (req, res) => {
     })
 })
 
+// courseRouter.put('/activePlayers', (req, res) => {
+//   courseApi.getCourse(req.params.courseId)
+//   .then((course) => {
+//     course.activePlayers.push(userId)
+//     course.save()
+//     res.render('./checkOut.hbs', {user})
+//   })
+// })
+
 //update
 courseRouter.put('/:courseId', (req, res) => {
   courseApi.updateCourse(req.params.courseId, req.body)

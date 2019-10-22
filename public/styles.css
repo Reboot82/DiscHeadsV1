@@ -55,3 +55,7 @@ li {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
+
+#spacer {
+    line-height: 20px;
+}

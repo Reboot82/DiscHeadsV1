@@ -13,6 +13,13 @@ userRouter.get('/:userId/checkIn', (req, res) => {
   })
 })
 
+userRouter.get('/:userId/checkOut', (req, res) => {
+  userApi.getUser(req.params.userId)
+  .then((user) => {
+    res.render('./checkOut.hbs', {user})
+  })
+})
+
 userRouter.get('/new', (req, res) => {
   res.render('./users/newUserForm')
 })

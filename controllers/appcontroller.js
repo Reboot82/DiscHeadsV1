@@ -12,6 +12,10 @@ appRouter.get('/', (req, res) => {
     res.render('./checkIn.hbs')
   })
 
+  appRouter.get('/checkOut', (req, res) => {
+    res.render('./checkOut.hbs')
+  })
+
 module.exports = {
   appRouter
 }

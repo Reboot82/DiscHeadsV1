@@ -20,6 +20,13 @@ courseRouter.get('/:courseId/edit', (req, res) => {
  courseRouter.get('/', (req, res) => {
   courseApi.getAllCourses()
     .then((courses) => {
+      courses.sort(function(a, b){
+        let x = a.name;
+        let y = b.name;
+        if (x < y) {return -1;}
+        if (x > y) {return 1;}
+        return 0;
+      });
       res.render('./courses/courses', {courses})
     })
 })

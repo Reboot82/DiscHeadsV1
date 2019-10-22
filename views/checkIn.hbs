@@ -1,11 +1,7 @@
 <h4>{{user.name}} Check-In</h4>
 
 <p>
-    Course Name: {{#each courses}}
-    <a href="/courses/{{_id}}">
-        <li>{{name}}</li>
-    </a>
-{{/each}}
+    Course Name: <input class="form" type="text" name="name" required="required" placeholder="Name" value="{{course.name}}"/>
 </p>
 
 <form action="/course/{{course._id}}/{{course.activePlayers}}" method="POST">

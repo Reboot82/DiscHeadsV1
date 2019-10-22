@@ -8,9 +8,6 @@ appRouter.get('/', (req, res) => {
     res.render('./start.hbs')
   })
 
-  appRouter.get('/checkIn', (req, res) => {
-    res.render('./checkIn.hbs')
-  })
 
   appRouter.get('/checkOut', (req, res) => {
     res.render('./checkOut.hbs')

@@ -5,6 +5,14 @@ const userApi = require('../models/user.js')
 
 const userRouter = express.Router()
 
+
+userRouter.get('/:userId/checkIn', (req, res) => {
+  userApi.getUser(req.params.userId)
+  .then((user) => {
+    res.render('./checkIn.hbs', {user})
+  })
+})
+
 userRouter.get('/new', (req, res) => {
   res.render('./users/newUserForm')
 })

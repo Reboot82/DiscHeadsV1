@@ -41,3 +41,17 @@ li {
     font-size: 35px;
     color: yellow;
 }
+
+#start {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.start {
+    font-size: 60px;
+    padding: 5px 0 5px 0;
+    margin: 5px 0 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}

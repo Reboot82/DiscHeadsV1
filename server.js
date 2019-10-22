@@ -33,7 +33,7 @@ app.set('view engine', 'hbs')
 app.use('/users', userRouter)
 app.use('/courses', courseRouter)
 app.use('/discs', discRouter)
-app.use('/start', appRouter)
+app.use('/', appRouter)
 
 const PORT = process.env.PORT || 3000 
 

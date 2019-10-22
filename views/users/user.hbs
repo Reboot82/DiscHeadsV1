@@ -4,25 +4,30 @@
 <p>Ability: {{user.ability}}</p>
 <p>Location: {{user.location}}</p>
 
-<a href="/users/{{user._id}}/edit">
-    <button>
-        Edit Player
-    </button>
-</a>
+<a href="/checkIn/{{_id}}">
+        <button>New Round</button>
+    </a>
 
-<form action="/users/{{user._id}}?_method=DELETE" method="POST">
-    <input class="form" type="submit" value="Delete User" />
-</form>
 
-<a href="/discs/">
+<footer>
+    <a href="/users/{{user._id}}/edit">
+        <button>
+            Edit Player
+        </button>
+    </a>
+
+    <a href="/discs/">
         <button>Discs</button>
     </a>
 
-<footer>
+    <form action="/users/{{user._id}}?_method=DELETE" method="POST">
+        <input class="form" type="submit" value="Delete Player" />
+    </form>
+
     <a href="/users/">
         <button>Players</button>
     </a>
-    <a href="/start/">
+    <a href="/">
         <button>Home</button>
     </a>
 </footer>

@@ -1,0 +1,13 @@
+<h4>{{user.name}} Check-In</h4>
+
+<p>
+    Course Name: {{#each courses}}
+    <a href="/courses/{{_id}}">
+        <li>{{name}}</li>
+    </a>
+{{/each}}
+</p>
+
+<form action="/course/{{course._id}}/{{course.activePlayers}}" method="POST">
+<input class="form" type="submit" value="Start"/>
+</form>

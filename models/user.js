@@ -5,7 +5,7 @@ const mongoose = require('./connection.js')
 const UserSchema = new mongoose.Schema({
  name: { type: String, required: true },
  photo: { type: String },
- ability: { type: String, default: 'Amateur' },
+ ability: { type: String, enum: ['Beginner', 'Amateur', 'Pro'] },
  location: { type: String }
 })
 

@@ -1,7 +1,7 @@
 <h4>Edit {{disc.name}}</h4>
 
 <form action="/discs/{{disc._id}}?_method=PUT" method="POST">
-    <input class="form" type="text" name="name" placeholder="Name" value="{{disc.name}}"/>
+    <input class="form" type="text" name="name" required="required" placeholder="Name" value="{{disc.name}}"/>
     <input class="form" type="text" name="flightNumbers" placeholder="Flight Numbers" value="{{disc.flightNumbers}}"/>
     <input class="form" type="text" name="firstPlayed" placeholder="First Played" value="{{disc.firstPlayed}}"/>
 

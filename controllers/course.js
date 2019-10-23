@@ -2,6 +2,8 @@
 const express = require('express')
 
 const courseApi = require('../models/course.js')
+const userApi = require('../models/user.js')
+
 
 const courseRouter = express.Router()
 
@@ -47,14 +49,14 @@ courseRouter.post('/', (req, res) => {
     })
 })
 
-// courseRouter.put('/:courseId/activePlayers', (req, res) => {
-//   courseApi.getCourse(req.params.courseId)
-//   .then((course) => {
-//     course.activePlayers.push(userId)
-//     course.save()
-//     res.render('./checkOut.hbs', {user})
-//   })
-// })
+courseRouter.put('/users/:userId/checkOut', (req, res) => {
+  courseApi.getCourse(req.params.courseId)
+  .then((course) => {
+    course.activePlayers.push(userId)
+    course.save()
+    res.render('./checkOut.hbs', {user})
+  })
+})
 
 //update
 courseRouter.put('/:courseId', (req, res) => {

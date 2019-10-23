@@ -4,18 +4,22 @@
 
 <a href="/discs/new">
     <button>
-    Add New Disc
+        Add New Disc
     </button>
 </a>
 <ol>
-{{#each discs}}
+    {{#each discs}}
     <a href="/discs/{{_id}}">
         <li>{{name}}</li>
     </a>
-{{/each}}
+    {{/each}}
 </ol>
 
 <a href="/users">
     <button>
-    Go To Users
+        Go To Players
     </button>
+</a>
+<a href="/">
+    <button>Home</button>
+</a>

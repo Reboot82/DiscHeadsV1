@@ -1,24 +1,28 @@
 <h1>
-    Players
+    Player List
 </h1>
 
-<a href="/users/new">
-    <button>
-    Add New Player
-    </button>
-</a>
 <ol>
-{{#each users}}
+    {{#each users}}
     <a href="/users/{{_id}}">
         <li>{{name}}</li>
     </a>
-{{/each}}
+    {{/each}}
 </ol>
-
-<a href="/courses">
+<a href="/users/new">
     <button>
-    Go To Courses
+        Add New Player
     </button>
-    <a href="/">
-        <button>Home</button>
-    </a>
+</a>
+<footer>
+    <div class="spacer">
+        <p> </p>
+    </div>
+    <a href="/courses">
+        <button>
+            Go To Courses
+        </button>
+        <a href="/">
+            <button>Home</button>
+        </a>
+</footer>

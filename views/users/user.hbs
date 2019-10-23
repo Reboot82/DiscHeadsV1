@@ -5,8 +5,8 @@
 <p>Location: {{user.location}}</p>
 
 <a href="/users/{{user._id}}/checkIn">
-        <button>New Round</button>
-    </a>
+    <button>New Round</button>
+</a>
 
 
 <footer>
@@ -23,12 +23,12 @@
     <form action="/users/{{user._id}}?_method=DELETE" method="POST">
         <input class="form" type="submit" value="Delete Player" />
     </form>
-    <div id="spacer">
+    <div class="spacer">
         <p> </p>
     </div>
 
     <a href="/users/">
-        <button>Players</button>
+        <button>Player List</button>
     </a>
     <a href="/">
         <button>Home</button>

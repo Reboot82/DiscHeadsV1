@@ -13,7 +13,6 @@ userRouter.get('/:userId/checkIn', (req, res) => {
     courseApi.getAllCourses()
       .then((allCourses) => {
         res.render('./checkIn.hbs', {user, allCourses})
-
       })
   })
 })
@@ -21,7 +20,10 @@ userRouter.get('/:userId/checkIn', (req, res) => {
 userRouter.get('/:userId/checkOut', (req, res) => {
   userApi.getUser(req.params.userId)
   .then((user) => {
-    res.render('./checkOut.hbs', {user})
+    courseApi.getAllCourses()
+      .then((allCourses) => {
+        res.render('./checkOut.hbs', {user, allCourses})
+      })
   })
 })
 

@@ -30,7 +30,7 @@ Version 1.0
 
 ## Authors
 
-* **Brandt Campbell** - *Initial work* - [Reboot82](https://github.com/Reboot82)
+* **Brandt Campbell** - *Initial work* - [Reboot82](https://git.generalassemb.ly/Reboot82)
 
 ## Acknowledgments
 

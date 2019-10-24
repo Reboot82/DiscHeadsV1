@@ -1,21 +1,23 @@
 <h4>Edit {{course.name}}</h4>
 
 <form action="/courses/{{course._id}}?_method=PUT" method="POST">
-    <input class="form" type="text" name="name" required="required" placeholder="Name" value="{{course.name}}"/>
-    <input class="form" type="text" name="photo" placeholder="Photo" value="{{course.photo}}"/>
-    <input class="form" type="text" name="location" placeholder="Location" value="{{course.location}}"/>
-    <input class="form" name="difficulty" required="required" list="difficulty-options" placeholder="Difficulty" value="{{course.difficulty}}" />
-   <datalist id="difficulty-options">
-       <option value="Easy">
-       <option value="Hard">
-       <option value="Pro">
-   </datalist>
+    <input class="form" type="text" name="name" required="required" placeholder="Name" value="{{course.name}}" />
+    <input class="form" type="text" name="photo" placeholder="Photo" value="{{course.photo}}" />
+    <input class="form" type="text" name="location" placeholder="Location" value="{{course.location}}" />
+    <input class="form" name="difficulty" required="required" list="difficulty-options" placeholder="Difficulty"
+        value="{{course.difficulty}}" />
+    <datalist id="difficulty-options">
+        <option value="Easy">
+        <option value="Medium">
+        <option value="Hard">
+        <option value="Pro">
+    </datalist>
 
-    <input class="form" type="submit" value="Save"/>
+    <input class="form" type="submit" value="Save" />
 </form>
 <a href="/courses/{{course._id}}">
-        <button>Back</button>
-    </a>
+    <button>Back</button>
+</a>
 <a href="/">
-        <button>Home</button>
-    </a>
+    <button>Home</button>
+</a>

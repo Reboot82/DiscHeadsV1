@@ -5,7 +5,7 @@ const mongoose = require('./connection.js')
 const CourseSchema = new mongoose.Schema({
  name: { type: String, required: true },
  photo: { type: String },
- difficulty: { type: String, enum: ['Easy', 'Hard', 'Pro'] },
+ difficulty: { type: String, enum: ['Easy', 'Medium', 'Hard', 'Pro'] },
  location: { type: String },
  activePlayers: []
 })

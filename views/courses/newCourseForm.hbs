@@ -1,21 +1,22 @@
 <h2>Create New Course</h2>
 
 <form action="/courses" method="POST">
-    <input class="form" type="text" name="name" required="required" placeholder="Name"/>
-    <input class="form" type="text" name="photo" placeholder="Photo"/>
-    <input class="form" type="text" name="location" placeholder="Location"/>
+    <input class="form" type="text" name="name" required="required" placeholder="Name" />
+    <input class="form" type="text" name="photo" placeholder="Photo" />
+    <input class="form" type="text" name="location" placeholder="Location" />
     <input class="form" name="difficulty" required="required" list="difficulty-options" placeholder="Difficulty" />
-   <datalist id="difficulty-options">
-       <option value="Easy">
-       <option value="Hard">
-       <option value="Pro">
-   </datalist>
-    
-    <input class="form" type="submit" value="Create"/>
+    <datalist id="difficulty-options">
+        <option value="Easy">
+        <option value="Medium">
+        <option value="Hard">
+        <option value="Pro">
+    </datalist>
+
+    <input class="form" type="submit" value="Create" />
 </form>
 <a href="/courses">
-        <button>Back</button>
-    </a>
+    <button>Back</button>
+</a>
 <a href="/">
-        <button>Home</button>
-    </a>
+    <button>Home</button>
+</a>

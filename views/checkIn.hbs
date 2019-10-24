@@ -1,18 +1,15 @@
 <h4>{{user.name}} Check-In</h4>
-<form><input class="form" name="name" required="required" list="course-options" placeholder="Course" />
-    <p>
-        Course Name:
-        <datalist id="course-options">
-            {{#each allCourses}}
-            <option data-value="{{_id}}">{{name}}</option>
-                {{/each}}
-        </datalist>
-    </p>
-    {{!-- <p>Time Started: </p> --}}
+<form action="/courses/users/{{user._id}}/checkIn?_method=PUT" method="POST">
+    Course Name:
+    <select class="form" list="course-options" placeholder="Course" name="courseId"/>
+        {{#each allCourses}}
+        <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+    </select>
+    <input type="hidden" name="activePlayer" value="{{user._id}}" />
 
     {{!-- <a href="/users/{{user._id}}/checkOut"> --}}
         <input class="form" type="submit" value="Start" />
-        <input type="hidden" value="{{user._id}}" />
     {{!-- </a> --}}
 </form>
 <a href="/users/{{user._id}}">

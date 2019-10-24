@@ -14,22 +14,22 @@ courseRouter.get('/new', (req, res) => {
 courseRouter.get('/:courseId/edit', (req, res) => {
   courseApi.getCourse(req.params.courseId)
     .then((course) => {
-      res.render('./courses/editCourseForm', {course})
+      res.render('./courses/editCourseForm', { course })
     })
 })
 
- //getAll
- courseRouter.get('/', (req, res) => {
+//getAll
+courseRouter.get('/', (req, res) => {
   courseApi.getAllCourses()
     .then((courses) => {
-      courses.sort(function(a, b){
+      courses.sort(function (a, b) {
         let x = a.name;
         let y = b.name;
-        if (x < y) {return -1;}
-        if (x > y) {return 1;}
+        if (x < y) { return -1; }
+        if (x > y) { return 1; }
         return 0;
       });
-      res.render('./courses/courses', {courses})
+      res.render('./courses/courses', { courses })
     })
 })
 
@@ -37,7 +37,7 @@ courseRouter.get('/:courseId/edit', (req, res) => {
 courseRouter.get('/:courseId', (req, res) => {
   courseApi.getCourse(req.params.courseId)
     .then((course) => {
-      res.render('./courses/course', {course})
+      res.render('./courses/course', { course })
     })
 })
 
@@ -49,14 +49,44 @@ courseRouter.post('/', (req, res) => {
     })
 })
 
-courseRouter.put('/users/:userId/checkOut', (req, res) => {
-  courseApi.getCourse(req.params.courseId)
-  .then((course) => {
-    course.activePlayers.push(userId)
-    course.save()
-    res.render('./checkOut.hbs', {user})
-  })
+courseRouter.put('/users/:userId/checkIn', (req, res) => {
+  courseApi.getCourse(req.body.courseId)
+    .then((singleCourse) => {
+      userApi.getUser(req.body.activePlayer)
+        .then((user) => {
+          singleCourse.activePlayers.push(user.name)
+          singleCourse.save()
+          res.redirect(`/courses/users/${req.params.userId}/${singleCourse._id}/checkOut`)
+        })
+    })
 })
+courseRouter.put('/users/:userId/:courseId/checkOut', (req, res) => {
+  courseApi.getCourse(req.params.courseId)
+    .then((singleCourse) => {
+      userApi.getUser(req.body.activePlayer)
+        .then((user) => {
+          for (let i = 0; i < singleCourse.activePlayers.length; i++) {
+            if (user.name === singleCourse.activePlayers[i]) {
+              singleCourse.activePlayers.splice(i, 1)
+            }
+            singleCourse.save()
+          }
+          res.redirect(`/users/${req.params.userId}`)
+        })
+    })
+})
+
+courseRouter.get('/users/:userId/:courseId/checkOut', (req, res) => {
+  courseApi.getCourse(req.params.courseId)
+    .then((singleCourse) => {
+      userApi.getUser(req.params.userId)
+        .then((user) => {
+
+          res.render('./checkOut.hbs', { user, singleCourse })
+        })
+    })
+})
+
 
 //update
 courseRouter.put('/:courseId', (req, res) => {

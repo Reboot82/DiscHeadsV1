@@ -17,15 +17,15 @@ userRouter.get('/:userId/checkIn', (req, res) => {
   })
 })
 
-userRouter.get('/:userId/checkOut', (req, res) => {
-  userApi.getUser(req.params.userId)
-  .then((user) => {
-    courseApi.getAllCourses()
-      .then((allCourses) => {
-        res.render('./checkOut.hbs', {user, allCourses})
-      })
-  })
-})
+// userRouter.get('/:userId/checkOut', (req, res) => {
+//   userApi.getUser(req.params.userId)
+//   .then((user) => {
+//     courseApi.getAllCourses()
+//       .then((allCourses) => {
+//         res.render('./checkOut.hbs', {user, allCourses})
+//       })
+//   })
+// })
 
 userRouter.get('/new', (req, res) => {
   res.render('./users/newUserForm')

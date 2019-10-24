@@ -1,15 +1,16 @@
 <h4>{{user.name}} Check-Out</h4>
 
-
-
-
-
-
-<a href="/users/{{user._id}}">
-{{!-- <form action="/course/{{course._id}}/{{course.activePlayers}}" method="POST"> --}}
-    <input class="form" type="submit" value="End" />
-{{!-- </form> --}}
-</a>
+<form action="/courses/users/{{user._id}}/{{singleCourse._id}}/checkOut?_method=PUT" method="POST">
+    Course Name:
+    <select class="form" list="course-options" placeholder="Course" name="courseId"/>
+        {{#each allCourses}}
+        <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+    </select>
+    <input type="hidden" name="activePlayer" value="{{user._id}}" />
+        <input class="form" type="submit" value="End" />
+   
+</form>
 
 
 <a href="/">

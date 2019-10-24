@@ -12,7 +12,7 @@ Trello Project Board: https://trello.com/b/NOtQHlN5/ga-project-2-disc-golf-app
 
 ### Wireframe
 
-![alt text] (/public/images/Wireframe.jpg)
+![alt text] (./public/images/Wireframe.jpg raw="true" Wireframe)
 
 ### Installing
 

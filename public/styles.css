@@ -18,6 +18,10 @@ h1 {
     text-transform: capitalize;
 }
 
+h3 {
+    background: white;
+}
+
 a {
     list-style-type: none;
     font-family: 'Montserrat', sans-serif;
@@ -38,6 +42,7 @@ p {
 button {
     font-size: 25px;
     border-radius: 10px;
+    text-shadow: 1px 1px 0px #7d96fa;
 }
 
 ol {

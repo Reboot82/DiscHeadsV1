@@ -2,6 +2,7 @@
 const express = require('express')
 
 const discApi = require('../models/disc.js')
+const userApi = require('../models/user.js')
 
 const discRouter = express.Router()
 
@@ -12,15 +13,15 @@ discRouter.get('/new', (req, res) => {
 discRouter.get('/:discId/edit', (req, res) => {
   discApi.getDisc(req.params.discId)
     .then((disc) => {
-      res.render('./discs/editDiscForm', {disc})
+      res.render('./discs/editDiscForm', { disc })
     })
 })
 
- //getAll
- discRouter.get('/', (req, res) => {
+//getAll
+discRouter.get('/', (req, res) => {
   discApi.getAllDiscs()
     .then((discs) => {
-      res.render('./discs/discs', {discs})
+      res.render('./discs/discs', { discs })
     })
 })
 
@@ -28,7 +29,7 @@ discRouter.get('/:discId/edit', (req, res) => {
 discRouter.get('/:discId', (req, res) => {
   discApi.getDisc(req.params.discId)
     .then((disc) => {
-      res.render('./discs/disc', {disc})
+      res.render('./discs/disc', { disc })
     })
 })
 

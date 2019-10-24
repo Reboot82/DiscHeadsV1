@@ -9,23 +9,13 @@ const userRouter = express.Router()
 
 userRouter.get('/:userId/checkIn', (req, res) => {
   userApi.getUser(req.params.userId)
-  .then((user) => {
-    courseApi.getAllCourses()
-      .then((allCourses) => {
-        res.render('./checkIn.hbs', {user, allCourses})
-      })
-  })
+    .then((user) => {
+      courseApi.getAllCourses()
+        .then((allCourses) => {
+          res.render('./checkIn.hbs', { user, allCourses })
+        })
+    })
 })
-
-// userRouter.get('/:userId/checkOut', (req, res) => {
-//   userApi.getUser(req.params.userId)
-//   .then((user) => {
-//     courseApi.getAllCourses()
-//       .then((allCourses) => {
-//         res.render('./checkOut.hbs', {user, allCourses})
-//       })
-//   })
-// })
 
 userRouter.get('/new', (req, res) => {
   res.render('./users/newUserForm')
@@ -34,22 +24,22 @@ userRouter.get('/new', (req, res) => {
 userRouter.get('/:userId/edit', (req, res) => {
   userApi.getUser(req.params.userId)
     .then((user) => {
-      res.render('./users/editUserForm', {user})
+      res.render('./users/editUserForm', { user })
     })
 })
 
- //getAll
- userRouter.get('/', (req, res) => {
+//getAll
+userRouter.get('/', (req, res) => {
   userApi.getAllUsers()
     .then((users) => {
-      users.sort(function(a, b){
+      users.sort(function (a, b) {
         let x = a.name;
         let y = b.name;
-        if (x < y) {return -1;}
-        if (x > y) {return 1;}
+        if (x < y) { return -1; }
+        if (x > y) { return 1; }
         return 0;
       });
-      res.render('./users/users', {users})
+      res.render('./users/users', { users })
     })
 })
 
@@ -57,7 +47,7 @@ userRouter.get('/:userId/edit', (req, res) => {
 userRouter.get('/:userId', (req, res) => {
   userApi.getUser(req.params.userId)
     .then((user) => {
-      res.render('./users/user', {user})
+      res.render('./users/user', { user })
     })
 })
 

@@ -1,21 +1,20 @@
 <h2>Create New Player</h2>
 
 <form action="/users" method="POST">
-    <input class="form" type="text" name="name" required="required" placeholder="Name"/>
-    <input class="form" type="text" name="photo" placeholder="Photo"/>
-    <input class="form" type="text" name="location" placeholder="Location"/>
-    <input class="form" name="ability" required="required" list="ability-options" placeholder="Ability" />
-   <datalist id="ability-options">
-       <option value="Beginner">
-       <option value="Amateur">
-       <option value="Pro">
-   </datalist>
-    
-    <input class="form" type="submit" value="Create"/>
+    <input class="form" type="text" name="name" required="required" placeholder="Name" />
+    <input class="form" type="text" name="photo" placeholder="Photo" />
+    <input class="form" type="text" name="location" placeholder="Location" />
+    <select class="form" name="ability" required="required" list="ability-options" placeholder="Ability" />
+    <option value="Beginner">Beginner</option>
+    <option value="Amateur">Amateur</option>
+    <option value="Pro">Pro</option>
+    </select>
+
+    <input class="form" type="submit" value="Create" />
 </form>
 <a href="/users">
-        <button>Back</button>
-    </a>
+    <button>Back</button>
+</a>
 <a href="/">
-        <button>Home</button>
-    </a>
+    <button>Home</button>
+</a>

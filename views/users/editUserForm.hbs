@@ -1,20 +1,18 @@
 <h4>Edit {{user.name}}</h4>
 
 <form action="/users/{{user._id}}?_method=PUT" method="POST">
-    <input class="form" type="text" name="name" required="required" placeholder="Name" value="{{user.name}}"/>
-    <input class="form" type="text" name="photo" placeholder="Photo" value="{{user.photo}}"/>
-    <input class="form" type="text" name="location" placeholder="Location" value="{{user.location}}"/>
-    <input class="form" name="ability" required="required" list="ability-options" placeholder="Ability" value="{{user.ability}}" />
-   <datalist id="ability-options">
-       <option value="Beginner">
-       <option value="Amateur">
-       <option value="Pro">
-   </datalist>
+    <input class="form" type="text" name="name" required="required" placeholder="Name" value="{{user.name}}" />
+    <input class="form" type="text" name="photo" placeholder="Photo" value="{{user.photo}}" />
+    <input class="form" type="text" name="location" placeholder="Location" value="{{user.location}}" />
+    <select class="form" name="ability" required="required" list="ability-options" placeholder="Ability"
+        value="{{user.ability}}" />
+    <option value="Beginner">Beginner</option>
+    <option value="Amateur">Amateur</option>
+    <option value="Pro">Pro</option>
+    </select>
 
-    <input class="form" type="submit" value="Save"/>
+    <input class="form" type="submit" value="Save" />
 </form>
 <a href="/">
-        <button>Home</button>
-    </a>
-
-    
+    <button>Home</button>
+</a>

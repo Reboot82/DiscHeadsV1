@@ -4,13 +4,12 @@
     <input class="form" type="text" name="name" required="required" placeholder="Name" />
     <input class="form" type="text" name="photo" placeholder="Photo" />
     <input class="form" type="text" name="location" placeholder="Location" />
-    <input class="form" name="difficulty" required="required" list="difficulty-options" placeholder="Difficulty" />
-    <datalist id="difficulty-options">
-        <option value="Easy">
-        <option value="Medium">
-        <option value="Hard">
-        <option value="Pro">
-    </datalist>
+    <select class="form" name="difficulty" required="required" list="difficulty-options" placeholder="Difficulty" />
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+        <option value="Pro">Pro</option>
+    </select>
 
     <input class="form" type="submit" value="Create" />
 </form>

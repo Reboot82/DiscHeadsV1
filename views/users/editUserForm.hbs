@@ -1,4 +1,4 @@
-<h4>Edit {{user.name}}</h4>
+<h3>Edit {{user.name}}</h3>
 
 <form action="/users/{{user._id}}?_method=PUT" method="POST">
     <input class="form" type="text" name="name" required="required" placeholder="Name" value="{{user.name}}" />

@@ -18,6 +18,10 @@ h1 {
     text-transform: capitalize;
 }
 
+h2 {
+    background: white;
+}
+
 h3 {
     background: white;
 }

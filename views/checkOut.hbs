@@ -1,4 +1,4 @@
-<h4>{{user.name}} Check-Out</h4>
+<h3>{{user.name}} Check-Out</h3>
 
 <form action="/courses/users/{{user._id}}/{{singleCourse._id}}/checkOut?_method=PUT" method="POST">
     <input type="hidden" name="activePlayer" value="{{user._id}}" />

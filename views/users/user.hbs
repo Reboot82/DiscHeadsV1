@@ -1,8 +1,12 @@
 <h3>{{user.name}}</h3>
 
-<p>{{user.photo}}</p>
-<p>Ability: {{user.ability}}</p>
-<p>Location: {{user.location}}</p>
+<div id="userPage">
+    <img class="profile" src="{{user.photo}}" />
+    <div id="userInfo">
+        <p>Ability: {{user.ability}}</p>
+        <p>Location: {{user.location}}</p>
+    </div>
+</div>
 
 <a href="/users/{{user._id}}/checkIn">
     <button>New Round</button>

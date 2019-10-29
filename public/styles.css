@@ -9,6 +9,8 @@ html {
 body {
     background: url('./images/Background.jpg') rgb(70, 69, 69);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100%;
     display: block;
 }
@@ -88,4 +90,21 @@ li {
     font-weight: 400;
     color: black;
     text-decoration: none;
+}
+
+.profile {
+    max-height: 300px;
+    float: left;
+}
+
+#userPage {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#userInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
